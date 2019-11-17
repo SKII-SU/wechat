@@ -1,0 +1,10 @@
+<!--pages/test/index.wxml-->
+<my-header menu='{{info}}'>
+  <text slot='before'>0</text>
+  <text slot='after'>1</text>
+</my-header>
+<view>测试自定义组件</view>
+
+
+<view class='testrpx'>test</view>
+

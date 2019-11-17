@@ -1,0 +1,5 @@
+var log = 'hello';
+
+module.exports = {
+  log: log
+};

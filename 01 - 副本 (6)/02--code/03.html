@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    /*
+      异步编程：获取程序执行的结果要通过回调函数方式获取
+      多个异步任务如何要保证执行顺序就必须进行回调函数的嵌套->回调地狱
+      所以说就诞生了Promise，解决回调地狱
+      但是Promise也不是最完美的，因为存在大量的then
+      所以说就有了Async/await
+  
+      在浏览器中只有三种异步场景
+      1、定时任务
+      2、ajax的回调函数
+      3、事件函数
+    */
+
+    function getData() {
+      var n = 100;
+      return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          resolve(n);
+        }, 1000);
+      });
+    }
+
+    function getData1(callback) {
+      var n = 101;
+      return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          resolve(n);
+        }, 2000);
+      });
+    }
+
+    function getData2(callback) {
+      var n = 102;
+      return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          resolve(n);
+        }, 3000);
+      });
+    }
+
+    // var ret = getData();
+    // console.log(ret)
+
+    getData()
+      .then(ret => {
+        console.log(ret)
+        return getData1();
+      })
+      .then(ret => {
+        console.log(ret)
+        return getData2();
+      })
+      .then(ret => {
+        console.log(ret)
+      })
+  </script>
+</body>
+
+</html>

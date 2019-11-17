@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script type="text/javascript">
+    // 定时任务，如果在延时时间内被销毁的话，定时任务不会执行
+    // 如果超过了延时时间，那么定时任务会执行
+    var timer = setTimeout(function() {
+      console.log('nihao')
+    }, 1000);
+    clearTimeout(timer);
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /*
+    数组的API
+    map
+    forEach
+    filter
+    sort
+    findIndex
+    slice
+    splice
+    some
+    every
+  */
+  var arr = [1,2,4,6];
+  // arr.forEach(item=>{
+  //   console.log(item)
+  // });
+  // arr.map(item=>{
+  //   console.log(item)
+  // })
+  // var ret = [];
+  // arr.forEach(item=>{
+  //   // console.log(item)
+  //   ret.push(item + 1);
+  // });
+  // console.log(ret)
+
+  // map的主要作用就是对原有数组中每一项数据进行加工处理
+  // 形成新的数据，并且最终会返回一个新的数组（新数组中就包含了所有处理后的数据）
+  // var arr1 = arr.map(item=>{
+  //   // return item + 1;
+  //   // return item * item;
+  //   return 'hello'
+  // });
+  // console.log(arr1)
+
+  // some的作用：判断数组中是否包含符合条件的数据；只要有一个，就返回true，否则返回false
+  // var flag = arr.some(item=>{
+  //   return item > 6;
+  // })
+  // console.log(flag)
+
+  var currentIndex = null;
+  arr.some((item, index)=>{
+    if(item === 4) {
+      // 找到了对应的数值
+      currentIndex = index
+      // 终止遍历
+      return true;
+    }
+    console.log('----------------')
+  });
+  console.log(currentIndex)
+
+  </script>
+</body>
+</html>

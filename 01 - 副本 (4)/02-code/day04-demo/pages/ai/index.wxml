@@ -1,0 +1,15 @@
+<!--pages/ai/index.wxml-->
+
+<!-- 背景图 -->
+<image class='bg' src='{{bgImage}}'></image>
+
+<!-- 选择图片的按钮 -->
+<button bind:tap='selectImage' class='btn'>选择图片</button>
+
+<!-- 颜值测试结果 -->
+<view wx:if='{{age}}' class='result'>
+  <view>性别：{{gender<50?'女': '男'}}</view>
+  <view>年龄：{{age}}</view>
+  <view>魅力：{{beauty}}</view>
+  <view>眼镜：{{glass}}</view>
+</view>

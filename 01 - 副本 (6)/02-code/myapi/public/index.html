@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div>测试Ajax</div>
+
+  <button id="btn">点击</button>
+  <script type="text/javascript">
+    // 封装一个ajax请求方法
+    function queryData(callback) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('get', 'http://localhost:3000/data?uname=lisi&pwd=123');
+      xhr.send(null);
+      xhr.onreadystatechange = function() {
+        if(xhr.readyState === 4 && xhr.status === 200) {
+          var ret = xhr.responseText;
+          // console.log(ret)
+          callback(ret);
+        }
+      }
+    }
+
+    // 解决回调地狱问题：通过Promise
+    function queryData1() {
+      return new Promise(function(resolve, reject){
+        // 这里处理异步任务：接口调用
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', 'http://localhost:3000/data?uname=lisi&pwd=123');
+        xhr.send(null);
+        xhr.onreadystatechange = function() {
+          // 屏蔽用不到的状态
+          if(xhr.readyState !== 4) return;
+          if(xhr.status === 200) {
+            // 可以正常获取数据
+            var ret = xhr.responseText;
+            resolve(ret);
+          } else {
+            // 异常数据
+            reject('服务器发生错误');
+          }
+        }
+      });
+    }
+
+    // 通过async函数获取结果
+    async function queryData2() {
+      var ret = await queryData1();
+      return ret;
+    }
+
+    // 点击按钮时，触发Ajax请求
+    var btn = document.getElementById('btn');
+    btn.onclick = async function() {
+      var ret = await queryData2();
+      console.log(ret)
+    }
+    // btn.onclick = function() {
+    //   // 发送请求
+    //   // queryData(function(data) {
+    //   //   console.log(data)
+    //   // });
+
+    //   // $.ajax({
+    //   //   success: function(data) {
+    //   //     console.log(data)
+    //   //   }
+    //   // });
+
+
+    //   // 回调地狱问题
+    //   // queryData(function(data) {
+    //   //   queryData(function(data) {
+    //   //     queryData(function(data) {
+    //   //       queryData(function(data) {
+    //   //         console.log(data)
+    //   //       });
+    //   //     });
+    //   //   });
+    //   // });
+      
+    //   // -------------------------
+    //   // 通过promise获取结果
+    //   // queryData1()
+    //   //   .then(function(data){
+    //   //     console.log(data)
+    //   //   })
+
+
+    //   // 如下的代码结构解决了回调地狱问题
+    //   // queryData1()
+    //   //   .then(function(data){
+    //   //     return queryData1();
+    //   //   })
+    //   //   .then(function(data){
+    //   //     return queryData1();
+    //   //   })
+    //   //   .then(function(data){
+    //   //     return queryData1();
+    //   //   })
+
+    //   // async函数返回值是Promise实例对象
+    //   queryData2().then(function(data) {
+    //     console.log(data)
+    //   })
+    // }
+  </script>
+</body>
+</html>

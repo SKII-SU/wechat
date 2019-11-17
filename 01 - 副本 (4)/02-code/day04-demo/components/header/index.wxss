@@ -1,0 +1,10 @@
+/* components/header/index.wxss */
+
+.nav {
+  display: flex;
+  background: #eee;
+  text-align: center;
+}
+.item {
+  flex: 1;
+}

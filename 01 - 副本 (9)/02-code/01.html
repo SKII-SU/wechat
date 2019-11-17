@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <script type="text/javascript">
+    // var arr1 = ['tom'];
+    // var arr2 = ['jerry'];
+
+    // var arr1 = [...arr1, ...arr2];
+    // arr1 = arr1.concat(arr2);
+    // console.log(arr1)
+
+    // -----------------------------
+    // 对象属性的访问方式
+    // 通过方括号操作对象属性可以使用变量
+    // 对象中可以添加数值形式的key，但是不可以通过.的方式添加，可以通过[]的方式添加
+    var obj = {};
+    // obj.abc = 123;
+    // obj.hello = 'nihao';
+    // obj['hello'] = 'nihao';
+
+    // var info = 'tom';
+    // obj["info"] = 'jerry';
+    // obj[info] = 'jerry';
+    // console.log(obj)
+
+    // var goods = {
+    //   goods_id: 111,
+    //   goods_name: '电视'
+    // }
+    // obj[goods.goods_id] = goods;
+    // console.log(obj)
+
+    // var arr = ['tom', 'jerry'];
+    // console.log(arr)
+
+    // 伪数组：有数值形式的key；并且有length属性
+    // 其实伪数组的本质就是对象
+    
+    // var divs = document.getElementsByTagName('div');
+    // console.dir(divs);
+
+    // var obj = {0:'tom',1:'jerry',2:'spike',length:3};
+    // console.dir(obj)
+
+    // console.dir([])
+
+    // var obj = {};
+    // var n = 123;
+    // obj[n] = {
+    //   uname: 'lisi',
+    //   age: 12
+    // }
+
+    // console.log(obj);
+
+    // 伪数组转化为数组
+    var obj = {0:'tom',1:'jerry',2:'spike',length:3};
+    var arr = [].slice.call(obj, 0);
+    console.log(arr)
+
+  </script>
+</body>
+</html>

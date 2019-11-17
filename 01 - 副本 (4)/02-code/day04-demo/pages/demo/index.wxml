@@ -1,0 +1,11 @@
+<!--pages/demo/index.wxml-->
+<!-- 条件渲染 -->
+<view wx:if='{{flag}}'>测试if</view>
+<view hidden='{{flag}}'>测试hidden</view>
+
+<!-- <view wx:if='{{flag}}'>Tom</view>
+<view wx:if='{{flag}}'>Jerry</view> -->
+<block wx:if='{{flag}}'>
+  <view>Tom</view>
+  <view>Jerry</view>
+</block>

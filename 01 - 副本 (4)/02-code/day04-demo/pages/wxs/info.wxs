@@ -1,0 +1,5 @@
+var str = 'nihao';
+
+module.exports = {
+  str: str
+}

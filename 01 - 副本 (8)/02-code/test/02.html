@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /*
+    数据相关api
+    map
+    filter
+    some
+    forEach
+    findIndex
+    push
+    unshift
+    slice
+    splice
+  */
+  var arr = [1,2,3,4,5,6];
+  // var arr1 = [];
+  // arr.forEach(item=>{
+  //   arr1.push(item + 1);
+  // });
+  // console.log(arr1)
+
+  // map的作用：对数组中原有数据进行加工处理，形成一个新的数组，新数组中包含所有加工之后的数据
+  // var arr1 = arr.map(item=>{
+  //   // return item + 1;
+  //   // return item * item;
+  //   return 123;
+  // });
+  // console.log(arr1)
+
+  // filter的作用：过滤出原有数组中符合条件的数据
+  // var arr2 = arr.filter(item=>{
+  //   // 返回值表示过滤条件
+  //   // return item > 4;
+  //   return item > 2 && item < 5;
+  // });
+  // console.log(arr2)
+
+  // some 作用：判断数组中是否包含符合条件的数据，只要有一个就返回true，否则返回false
+  // var flag = arr.some(item=>{
+  //   return item > 3;
+  // });
+  // console.log(flag)
+  
+  // var currentIndex = null;
+  // arr.forEach((item, index)=>{
+  //   if(item == 3) {
+  //     currentIndex = index;
+  //   }
+  // });
+  // console.log(currentIndex)
+
+  // var currentIndex = null;
+  // arr.some((item, index) => {
+  //   if(item == 3) {
+  //     // 找到了数据，保存对应索引，终止继续遍历
+  //     currentIndex = index
+  //     // 终止遍历
+  //     return true;
+  //   }
+  //   console.log('------------')
+  // })
+  // console.log(currentIndex)
+
+  // findIndex 查找符合条件的数据的索引
+  var index = arr.findIndex(item=>{
+    return item == 3;
+  });
+  console.log(index)
+
+  </script>
+</body>
+</html>

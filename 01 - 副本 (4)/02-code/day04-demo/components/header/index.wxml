@@ -1,0 +1,14 @@
+<!--components/header/index.wxml-->
+<!-- <view class='nav'>
+  <view class='item'>首页</view>
+  <view class='item'>科技</view>
+  <view class='item'>军事</view>
+</view> -->
+
+<view class='nav'>
+  <slot name="before"></slot>
+  <view bind:tap='handle' wx:key='{{index}}' wx:for='{{menu}}' class='item'>
+    {{start + item + end}}
+  </view>
+  <slot name="after"></slot>
+</view>

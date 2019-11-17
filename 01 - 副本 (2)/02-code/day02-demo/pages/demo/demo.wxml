@@ -1,0 +1,125 @@
+<!--pages/demo/demo.wxml-->
+<!-- <text>demo</text>
+<text>{{nickname}}</text>
+<text>{{userInfo.nickName}}</text> -->
+
+<!-- 数据绑定 -->
+<!-- <text>{{info}}</text>
+<text data-abc='stu-{{id}}'>nihao</text>
+<text data-abc='{{id}}'>nihao</text>
+<text>{{1 + 1}}</text>
+<text>{{id + 1}}</text>
+<view>
+  <text>{{stu.uname + '---' + stu.age}}</text>
+</view> -->
+
+<!-- 条件渲染 -->
+<!-- <view wx:if='{{flag}}'>登录</view>
+<view wx:else>注册</view> -->
+<!-- <view wx:if='{{score<=60}}'>差</view>
+<view wx:elif='{{score>60 && score <=80}}'>一般</view>
+<view wx:elif='{{score>80 && score <=90}}'>良好</view>
+<view wx:else>优秀</view> -->
+
+<!-- block标签的用法 -->
+<!-- <view wx:if='{{isShow}}'>Tom</view>
+<view wx:if='{{isShow}}'>Jerry</view> -->
+<!-- <block wx:if='{{isShow}}'>
+  <view>Tom</view>
+  <view>Jerry</view>
+  <view>Spike</view>
+</block> -->
+
+<!-- hidden属性用法 -->
+<!-- 如果hidden的值是true，那么就隐藏；否则就显示 -->
+<!-- 无论显示还是隐藏，都会进行渲染，本质上就是控制display属性的值 -->
+<!-- 如果要频繁的切换显示和隐藏，那么推荐使用hidden -->
+<!-- wx:if和hidden的关系类似于Vue中的指令v-if和v-show的关系 -->
+<!-- <view hidden='{{isShow}}'>测试hedden</view> -->
+
+<!-- 列表渲染 -->
+<!-- <view wx:for='{{list}}'>
+  <text>{{index+1}}</text>
+  <text>----</text>
+  <text>{{item}}</text>
+</view> -->
+
+<!-- wx:key的作用：提高渲染性能 -->
+<!-- wx:key与Vue中的key的作用类似 -->
+<!-- <view wx:key='{{item.id}}' wx:for='{{listData}}'>
+  <text>{{index+1}}</text>
+  <text>----</text>
+  <text>{{item.cname + '---' + item.ename}}</text>
+</view> -->
+
+<!-- 自定义索引和条目的名称 -->
+<!-- <view wx:for-index='num' wx:for-item='fruit' wx:key='num' wx:for='{{list}}'>
+  <text>{{num + '---' + fruit }}</text>
+</view> -->
+
+<!-- 模板用法 -->
+<!-- 定义模板 -->
+<!-- <template name='userInfo'>
+  <view>{{info.uname}}</view>
+  <view>{{info.age}}</view>
+  <view>{{info.gender}}</view>
+</template>
+<template name='userList'>
+  <view wx:key='index' wx:for='{{list}}'>
+    <view>{{item.uname}}</view>
+    <view>{{item.age}}</view>
+  </view>
+  <view wx:key='index' wx:for='{{list1}}'>
+    <view>{{item.uname}}</view>
+    <view>{{item.age}}</view>
+  </view>
+</template> -->
+<!-- 使用模板 -->
+<!-- <template is='userInfo' data='{{...userData}}'></template>
+<template is='userInfo' data='{{...userData1}}'></template>
+<template is='userList' data='{{...userData}}'></template>
+ -->
+
+<!-- 事件处理 -->
+<!-- <view>{{info}}</view>
+<view bindtap='handleTap'>点击</view> -->
+
+<!-- 事件冒泡 -->
+<!-- <view bind:tap='handleParent'>
+  <view bind:tap='handleChild'>点击</view>
+</view> -->
+
+<!-- 阻止冒泡 -->
+<!-- <view catchtap='handleParent'>
+  <view catchtap='handleChild'>点击</view>
+</view> -->
+
+<!-- 处理事件捕获 -->
+<!-- <view capture-bind:tap='handleParent'>
+  <view capture-bind:tap='handleChild'>点击</view>
+</view> -->
+
+<!-- 阻止捕获 -->
+<!-- 对于捕获操作来说，冒号不可以省略 -->
+<!-- <view capture-catch:tap='handleParent'>
+  <view capture-catch:tap='handleChild'>点击</view>
+</view> -->
+
+<!-- 事件对象相关操作 -->
+<!-- <view data-info='nihao' bind:tap='handleEventObjParent'>
+  <view data-abc='123' data-msg='hello' bind:tap='handleEventObj'>点击</view>
+</view> -->
+
+<!-- 表单操作 -->
+<form bindsubmit='handleForm'>
+  <view>
+    <input name='uname' placeholder="输入账号" auto-focus />
+  </view>
+  <view>
+    <input name='pwd' placeholder="输入密码" />
+  </view>
+  <view>
+    <button form-type='submit'>提交</button>
+  </view>
+</form>
+

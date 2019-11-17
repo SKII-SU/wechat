@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/demo/demo",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "中文",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#A9A9A9",
+    "selectedColor": "#82F98B",
+    "list": [
+      {
+        "iconPath": "imgs/logo1.png",
+        "selectedIconPath": "imgs/logo2.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "imgs/logo1.png",
+        "selectedIconPath": "imgs/logo2.png",
+        "pagePath": "pages/logs/logs",
+        "text": "日志"
+      }
+    ]
+  }
+}

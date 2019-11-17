@@ -1,0 +1,9 @@
+var m2 = require('./info.wxs');
+console.log(m2.log);
+var foo = function (data) {
+  return '【' + data + '】';
+}
+module.exports = {
+  format: foo,
+  info: m2.log
+}

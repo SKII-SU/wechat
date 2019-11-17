@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li data-price='1' onclick='handle'>苹果</li>
+    <li data-price='3' onclick='handle'>苹果</li>
+    <li onclick='handle'>苹果</li>
+    <li onclick='handle'>苹果</li>
+    <li onclick='handle'>苹果</li>
+    <li onclick='handle'>苹果</li>
+  </ul>
+
+  <!-- <div id="info" class='active' abc='hello'>测试属性</div> -->
+  <div id="info" class='active' data-abc='hello' data-msg='tom'>测试属性</div>
+  <script type="text/javascript">
+  function handle() {
+    // 可能需要区分点击的是第几个
+    
+  }
+  /*
+    标准属性
+    自定义属性:所有的自定义属性都通过 【data-属性名称】 方式定义
+    那么获取属性时，可以通过 dataset 获取所有的自定义属性值
+  */
+  let info = document.getElementById('info');
+  // let attr = info.abc;
+  // 原生DOM操作
+  // let attr = info.getAttribute('abc');
+  // console.log(attr)
+  // console.dir(info)
+
+  console.log(info.dataset)
+  </script>
+</body>
+</html>

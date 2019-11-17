@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <h2>{{msg}}</h2>
+    <ul>
+      <li :key='index' v-for='(item, index) in list'>
+        {{item.cname + '----' + item.ename}}
+      </li>
+    </ul>
+    <ul>
+      <li :key='index' v-for='(item, index) in cnameList'>
+        {{item}}
+      </li>
+    </ul>
+    <ul>
+      <li :key='index' v-for='(item, index) in enameList'>
+        {{item}}
+      </li>
+    </ul>
+  </div>
+  <script type="text/javascript" src="vue.js"></script>
+  <script type="text/javascript">
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        msg: '水果列表',
+        list: [{
+          cname: '苹果',
+          ename: 'apple'
+        }, {
+          cname: '橘子',
+          ename: 'orange'
+        }, {
+          cname: '香蕉',
+          ename: 'banana'
+        }, {
+          cname: '柠檬',
+          ename: 'lemon'
+        }]
+      },
+      computed: {
+        // 计算属性是基于data中的数据进行处理的
+        // 计算属性具备缓存功能，可以提高性能
+        cnameList () {
+          // 计算属性一般用于对已有的data数据进行加工处理
+          // 计算属性必须显示的返回一个数据，该数据就是加工之后的结果
+          let ret = this.list.map(item=>{
+            if(item.cname != '橘子') {
+              return item.cname;
+            }
+          });
+          // 过滤掉元素是空的数据
+          ret = ret.filter(item=>{
+            return item;
+          })
+          return ret;
+        },
+        enameList () {
+          return this.list.map(item => {
+            return item.ename;
+          });
+        }
+      },
+      methods: {
+        showInfo () {
+
+        }
+      }
+    });
+  </script>
+</body>
+</html>

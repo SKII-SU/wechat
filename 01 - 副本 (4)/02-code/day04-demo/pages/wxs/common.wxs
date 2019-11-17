@@ -1,0 +1,7 @@
+var m3 = require('./info.wxs');
+var n = 100;
+
+module.exports = {
+  n: n,
+  str: m3.str
+}

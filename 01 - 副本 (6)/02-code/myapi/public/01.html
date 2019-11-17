@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // async函数的返回值是Promise实例对象，而不是具体的值
+    async function foo() {
+      var ret = await 123
+      return ret;
+    }
+
+    // var ret = foo();
+    // foo().then(ret=>{
+    //   console.log(ret)
+    // })
+
+    async function fn() {
+      let ret = await foo();
+      console.log(ret)
+    }
+    fn();
+    
+  </script>
+</body>
+</html>

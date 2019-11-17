@@ -1,0 +1,22 @@
+<!--pages/demo/index.wxml-->
+<view>{{book}}</view>
+<view>{{m1.format(book)}}</view>
+<view>{{m1.info}}</view>
+
+<my-header>
+  <view slot='before'>前置内容</view>
+  <view slot='after'>后置内容</view>
+</my-header>
+
+<!-- 通过文件导入wxs文件 -->
+<wxs src='./common.wxs' module='m1'></wxs>
+<!-- 
+<wxs moudle='m1'>
+  // 一般用于格式化数据
+  var foo = function(data) {
+    return '《' + data + '》';
+  }
+  module.exports = {
+    format: foo
+  }
+</wxs> -->

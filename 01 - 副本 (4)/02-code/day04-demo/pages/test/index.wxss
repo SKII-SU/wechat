@@ -1,0 +1,7 @@
+/* pages/test/index.wxss */
+
+.testrpx {
+  width: 375rpx;
+  height: 150rpx;
+  background: #eee;
+}

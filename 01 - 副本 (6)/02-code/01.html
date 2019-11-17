@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var arr = [1, 3, 2,4,6,8];
+    // var arr1 = [];
+    // arr.forEach(item => {
+    //   let n = item * item;
+    //   arr1.push(n);
+    // });
+    // console.log(arr1)
+
+    // map一般用于对原有的数据进行加工，加工之后会形成一个新的数组
+    // arr = arr.map(item=>{
+    //   // 这里返回值指的是加工的每一项新数据
+    //   return item * item;
+    // });
+    // console.log(arr)
+
+    var arr = [{
+      id: 1,
+      image_src: 'http://localhost:3000/data.jpg'
+    }, {
+      id: 2,
+      image_src: 'http://localhost:3000/data1.jpg'
+    }, {
+      id: 3,
+      image_src: 'http://localhost:3000/data2.jpg'
+    }];
+    arr = arr.map(item => {
+      return item.image_src
+    });
+    console.log(arr)
+
+  </script>
+</body>
+</html>

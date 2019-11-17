@@ -1,0 +1,18 @@
+<!--pages/wxs/index.wxml-->
+<view>
+  {{m1.format(book)}}
+</view>
+<view>{{m2.n}}</view>
+<view>{{m2.str}}</view>
+<wxs src='./common.wxs' module='m2'></wxs>
+<wxs module='m1'>
+  // 定义了一个函数
+  var format = function(data) {
+    // 格式化数据
+    return '《' + data + '》';
+  }
+  // 导出了一个函数
+  module.exports = {
+    format: format
+  }
+</wxs>

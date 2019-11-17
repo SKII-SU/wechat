@@ -1,0 +1,5 @@
+<!--pages/demo/demo.wxml-->
+<view>{{msg}}</view>
+<view bind:tap='calculate'>
+  点击
+</view>
